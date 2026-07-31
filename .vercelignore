@@ -1,0 +1,6 @@
+.git
+outputs
+upload
+*.xlsx
+*.csv
+
