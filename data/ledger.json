@@ -2,15 +2,15 @@
   "meta": {
     "title": "AI Economic Reality Ledger",
     "sourceSpreadsheet": "https://docs.google.com/spreadsheets/d/19t28pwSb8CqnT80fhOwhBkUgGhiAW_kUrYPFlKTeJtk/edit",
-    "generatedAt": "2026-08-02T21:04:00-04:00",
+    "generatedAt": "2026-08-03T21:01:00-04:00",
     "timezone": "America/New_York",
     "rubricVersion": "1.0",
-    "latestRun": "2026-08-02 21:04 ET",
+    "latestRun": "2026-08-03 21:01 ET",
     "counts": {
       "evidence": 29,
       "perceptions": 8,
       "outcomes": 0,
-      "runs": 17
+      "runs": 18
     }
   },
   "evidence": [
@@ -1754,6 +1754,22 @@
       "Duplicates Skipped": "0",
       "No-Data Reason": null,
       "Coverage Gaps / Notes": "No evidence claim was due for review. Two globally material items were retained; no attributable perception signal met the threshold.",
+      "Model / Collector": "GPT-5.6",
+      "Rubric Version": "1.0"
+    },
+    {
+      "Run Date": "2026-08-03",
+      "Run Timestamp (ET)": "2026-08-03 21:01 ET",
+      "Region Rotation": "North America",
+      "Sector / Domain Rotation": "Technology, communications and AI infrastructure",
+      "Sources and Queries Checked": "Reuters date-targeted AI and infrastructure searches; White House AI framework and cybersecurity order; official SEC filing search; due follow-up review",
+      "Evidence Rows Added": "0",
+      "Perception Rows Added": "0",
+      "Outcome Rows Added": "0",
+      "Due Follow-Ups Reviewed": "0",
+      "Duplicates Skipped": "1",
+      "No-Data Reason": "No unique same-day source met the evidence or perception threshold.",
+      "Coverage Gaps / Notes": "North America infrastructure coverage was dominated by market commentary and previously processed announcements; the White House framework lacked public implementation detail, so no claim was forced.",
       "Model / Collector": "GPT-5.6",
       "Rubric Version": "1.0"
     }
