@@ -2,15 +2,15 @@
   "meta": {
     "title": "AI Economic Reality Ledger",
     "sourceSpreadsheet": "https://docs.google.com/spreadsheets/d/19t28pwSb8CqnT80fhOwhBkUgGhiAW_kUrYPFlKTeJtk/edit",
-    "generatedAt": "2026-08-03T21:01:00-04:00",
+    "generatedAt": "2026-08-04T21:03:00-04:00",
     "timezone": "America/New_York",
     "rubricVersion": "1.0",
-    "latestRun": "2026-08-03 21:01 ET",
+    "latestRun": "2026-08-04 21:03 ET",
     "counts": {
-      "evidence": 29,
+      "evidence": 30,
       "perceptions": 8,
       "outcomes": 0,
-      "runs": 18
+      "runs": 19
     }
   },
   "evidence": [
@@ -1231,6 +1231,48 @@
       "Rubric Version": "1.0",
       "Model / Collector": "GPT-5.6",
       "Notes": "This records the enforcement transition, not proof of compliance outcomes. High-risk-system obligations remain subject to later phased dates under the amended timeline."
+    },
+    {
+      "Evidence ID": "E-20260804-001",
+      "Collected At (ET)": "2026-08-04 21:03 ET",
+      "Source Published Date": "2026-08-04",
+      "Company / Organization": "Volta Infra / Azora / Bitdeer Technologies",
+      "Ticker": "BTDR",
+      "Entity Type": "Private company",
+      "Event Type": "Funding or deal",
+      "AI Capability": "Other",
+      "World Domain": "Infrastructure & Energy",
+      "Country": "Multiple",
+      "Region": "Europe",
+      "Industry": "AI cloud infrastructure",
+      "Business Function": "Infrastructure and operations",
+      "Workflow / Use Case": "Financing and delivering European cloud-computing capacity and AI factories",
+      "Transformation Mechanism": "Capacity expansion",
+      "Deployment Stage": "Announced",
+      "Claim / Evidence Summary": "Volta Infra announced a $10 billion European cloud-services contract with an unnamed AI company alongside Bitdeer and a separate $5 billion AI-infrastructure financing program with Azora; deployed capacity and realized revenue were not disclosed.",
+      "Impact Type": "Capital",
+      "Impact Value": "10",
+      "Impact Unit": "USD billions announced contract value",
+      "Baseline / Comparator": "New contract announced by a seven-month-old startup",
+      "Time Horizon / Target Date": "Contract term and build schedule not disclosed",
+      "Affected Group": "Customers",
+      "Labor Effect": "None stated",
+      "Named AI Vendor / Model": "Bitdeer Technologies; unnamed AI company",
+      "Likely Value Capturer": "Volta Infra; Bitdeer Technologies; Azora; infrastructure suppliers",
+      "Constraint / Bottleneck": "Unnamed customer; contract terms, financing, power, capacity, delivery schedule and realized revenue were not independently disclosed",
+      "Evidence Strength (1-5)": "3",
+      "Confidence": "Medium",
+      "Source Type": "High-quality reporting",
+      "Source Title": "AI cloud startup Volta valued at $2.4 billion, announces $10 billion AI partnership",
+      "Source URL": "https://www.reuters.com/business/ai-cloud-startup-volta-valued-24-billion-announces-10-billion-ai-partnership-2026-08-04/",
+      "Supporting Excerpt (≤20 words)": "Volta Infra landed a $10 billion contract with an unnamed AI company to provide cloud-computing services in Europe",
+      "Duplicate Key": "reuters.com/business/ai-cloud-startup-volta-valued-24-billion-announces-10-billion-ai-partnership-2026-08-04|Volta-Infra|European-cloud-contract",
+      "Follow-Up Needed?": "Yes",
+      "Next Review Date": "2026-11-04",
+      "Linked Parent ID": null,
+      "Rubric Version": "1.0",
+      "Model / Collector": "GPT-5.6",
+      "Notes": "Reuters attributes the contract and program figures to a company statement. This entry records announced intent, not deployed capacity or realized revenue."
     }
   ],
   "perceptions": [
@@ -1770,6 +1812,22 @@
       "Duplicates Skipped": "1",
       "No-Data Reason": "No unique same-day source met the evidence or perception threshold.",
       "Coverage Gaps / Notes": "North America infrastructure coverage was dominated by market commentary and previously processed announcements; the White House framework lacked public implementation detail, so no claim was forced.",
+      "Model / Collector": "GPT-5.6",
+      "Rubric Version": "1.0"
+    },
+    {
+      "Run Date": "2026-08-04",
+      "Run Timestamp (ET)": "2026-08-04 21:03 ET",
+      "Region Rotation": "Europe",
+      "Sector / Domain Rotation": "Finance, insurance and professional work",
+      "Sources and Queries Checked": "Reuters date-targeted Europe AI, finance and infrastructure searches; Volta Infra and Azora source search; European Commission and BaFin AI pages; due follow-up review",
+      "Evidence Rows Added": "1",
+      "Perception Rows Added": "0",
+      "Outcome Rows Added": "0",
+      "Due Follow-Ups Reviewed": "0",
+      "Duplicates Skipped": "2",
+      "No-Data Reason": null,
+      "Coverage Gaps / Notes": "One announced European AI-infrastructure financing and cloud-services deal met the threshold. Previously logged BaFin and EU AI Act items were skipped; a bank patent cross-license lacked operational deployment evidence; no attributable perception signal qualified.",
       "Model / Collector": "GPT-5.6",
       "Rubric Version": "1.0"
     }
