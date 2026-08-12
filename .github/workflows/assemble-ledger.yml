@@ -3,7 +3,7 @@ name: Assemble AI Economic Reality Ledger
 on:
   push:
     paths:
-      - 'data/.ledger-part-*'
+      - 'data/.ledger-delta-*.json'
   workflow_dispatch:
 
 permissions:
@@ -21,41 +21,19 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Check staged parts
-        id: parts
-        shell: bash
-        run: |
-          shopt -s nullglob
-          parts=(data/.ledger-part-*)
-          if [ ${#parts[@]} -eq 0 ]; then
-            echo "ready=false" >> "$GITHUB_OUTPUT"
-            exit 0
-          fi
-          count=$(printf '%s\n' "${parts[@]}" | wc -l)
-          if [ "$count" -ne 9 ]; then
-            echo "Found $count of 9 parts; waiting for the complete snapshot."
-            echo "ready=false" >> "$GITHUB_OUTPUT"
-            exit 0
-          fi
-          echo "ready=true" >> "$GITHUB_OUTPUT"
+      - name: Merge deltas into ledger
+        run: node scripts/apply-ledger-deltas.mjs
 
-      - name: Rebuild and validate ledger
-        if: steps.parts.outputs.ready == 'true'
-        shell: bash
-        run: |
-          cat data/.ledger-part-* | base64 --decode > data/ledger.json.tmp
-          node -e "JSON.parse(require('fs').readFileSync('data/ledger.json.tmp','utf8'))"
-          mv data/ledger.json.tmp data/ledger.json
-          npm run validate
+      - name: Validate ledger
+        run: npm run validate
 
-      - name: Commit validated snapshot
-        if: steps.parts.outputs.ready == 'true'
+      - name: Commit validated ledger and clean deltas
         shell: bash
         run: |
-          rm -f data/.ledger-part-*
+          rm -f data/.ledger-delta-*.json data/.ledger-part-*
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/ledger.json data/.ledger-part-* || true
+          git add data/ledger.json data/.ledger-delta-*.json data/.ledger-part-* || true
           if git diff --cached --quiet; then
             echo "No ledger changes to commit."
             exit 0
