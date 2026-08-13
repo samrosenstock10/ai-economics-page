@@ -33,7 +33,8 @@ jobs:
           rm -f data/.ledger-delta-*.json data/.ledger-part-*
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/ledger.json data/.ledger-delta-*.json data/.ledger-part-* || true
+          git add data/ledger.json
+          git add -u -- data
           if git diff --cached --quiet; then
             echo "No ledger changes to commit."
             exit 0
