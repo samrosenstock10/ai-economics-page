@@ -1,0 +1,44 @@
+{
+  "meta": {
+    "generatedAt": "2026-08-12T20:59:00-04:00",
+    "latestRun": "2026-08-12 20:59 ET",
+    "rubricVersion": "1.0"
+  },
+  "evidence": [],
+  "perceptions": [],
+  "outcomes": [],
+  "runs": [
+    {
+      "Run Date": "2026-08-11",
+      "Run Timestamp (ET)": "2026-08-11 21:03 ET",
+      "Region Rotation": "Europe",
+      "Sector / Domain Rotation": "Finance, insurance and professional work",
+      "Sources and Queries Checked": "Reuters date-targeted Aug. 11 Europe AI, finance, insurance and professional-services searches; European AI Act/compliance searches; current research searches; due follow-up review",
+      "Evidence Rows Added": 0,
+      "Perception Rows Added": 0,
+      "Outcome Rows Added": 0,
+      "Due Follow-Ups Reviewed": 0,
+      "Duplicates Skipped": 0,
+      "No-Data Reason": "No unique same-day source met the evidence or perception threshold.",
+      "Coverage Gaps / Notes": "Aug. 11 Europe finance/professional-work coverage was event/compliance guidance or commentary without a sufficiently specific new deployment, measured result, attributable perception signal, or mature follow-up. No Evidence row was due for review.",
+      "Model / Collector": "GPT-5.6",
+      "Rubric Version": "1.0"
+    },
+    {
+      "Run Date": "2026-08-12",
+      "Run Timestamp (ET)": "2026-08-12 20:59 ET",
+      "Region Rotation": "Greater China & East Asia",
+      "Sector / Domain Rotation": "Manufacturing, robotics and supply chains",
+      "Sources and Queries Checked": "Reuters date-targeted Aug. 12 Greater China/East Asia AI, robotics and manufacturing searches; South Korea future-technology roadmap; China humanoid/robotics searches; current smart-manufacturing research; due follow-up review",
+      "Evidence Rows Added": 0,
+      "Perception Rows Added": 0,
+      "Outcome Rows Added": 0,
+      "Due Follow-Ups Reviewed": 0,
+      "Duplicates Skipped": 0,
+      "No-Data Reason": "No unique same-day source met the evidence or perception threshold.",
+      "Coverage Gaps / Notes": "Aug. 12 Greater China/East Asia searches produced a South Korean national technology roadmap with AI-bio/autonomous-lab elements but no sufficiently specific operating AI deployment or measured outcome for this ledger. Other results were older research, commentary, or already-known robotics activity. No attributable perception signal qualified and no Evidence row was due for review.",
+      "Model / Collector": "GPT-5.6",
+      "Rubric Version": "1.0"
+    }
+  ]
+}
