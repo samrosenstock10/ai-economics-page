@@ -1,0 +1,28 @@
+{
+  "meta": {
+    "generatedAt": "2026-08-13T23:59:00-04:00",
+    "latestRun": "2026-08-13 23:59 ET",
+    "rubricVersion": "1.0"
+  },
+  "evidence": [],
+  "perceptions": [],
+  "outcomes": [],
+  "runs": [
+    {
+      "Run Date": "2026-08-13",
+      "Run Timestamp (ET)": "2026-08-13 23:59 ET",
+      "Region Rotation": "South & Southeast Asia",
+      "Sector / Domain Rotation": "Healthcare, life sciences and education",
+      "Sources and Queries Checked": "Reuters date-targeted Aug. 13 South/Southeast Asia AI, healthcare and education searches; India healthcare AI searches; Southeast Asia responsible-health-AI research; current healthcare deployment and research searches; due follow-up review",
+      "Evidence Rows Added": 0,
+      "Perception Rows Added": 0,
+      "Outcome Rows Added": 0,
+      "Due Follow-Ups Reviewed": 0,
+      "Duplicates Skipped": 0,
+      "No-Data Reason": "No unique same-day source met the evidence or perception threshold.",
+      "Coverage Gaps / Notes": "Aug. 13 South/Southeast Asia healthcare, life-sciences and education searches produced current discussion, older regional research and recent preprints, but no sufficiently specific same-day operating deployment, measured result, attributable representative perception signal, or mature follow-up. No Evidence row was due for review.",
+      "Model / Collector": "GPT-5.6",
+      "Rubric Version": "1.0"
+    }
+  ]
+}
