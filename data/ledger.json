@@ -2,15 +2,15 @@
   "meta": {
     "title": "AI Economic Reality Ledger",
     "sourceSpreadsheet": "https://docs.google.com/spreadsheets/d/19t28pwSb8CqnT80fhOwhBkUgGhiAW_kUrYPFlKTeJtk/edit",
-    "generatedAt": "2026-08-15T01:02:00-04:00",
+    "generatedAt": "2026-08-15T23:01:00-04:00",
     "timezone": "America/New_York",
     "rubricVersion": "1.0",
-    "latestRun": "2026-08-15 01:02 ET",
+    "latestRun": "2026-08-15 23:01 ET",
     "counts": {
       "evidence": 33,
       "perceptions": 8,
       "outcomes": 0,
-      "runs": 26
+      "runs": 27
     }
   },
   "evidence": [
@@ -2066,6 +2066,22 @@
       "Duplicates Skipped": 0,
       "No-Data Reason": "No unique same-day source met the evidence or perception threshold.",
       "Coverage Gaps / Notes": "Aug. 14 Latin America consumer, commerce, media and creativity searches were quiet. Results were primarily older regional adoption research or unrelated same-week payments coverage, with no sufficiently specific same-day operating AI deployment, measured result, attributable representative perception signal, or mature follow-up. No Evidence row was due for review.",
+      "Model / Collector": "GPT-5.6",
+      "Rubric Version": "1.0"
+    },
+    {
+      "Run Date": "2026-08-15",
+      "Run Timestamp (ET)": "2026-08-15 23:01 ET",
+      "Region Rotation": "Middle East & Africa",
+      "Sector / Domain Rotation": "Government, infrastructure, energy and agriculture",
+      "Sources and Queries Checked": "Date-targeted Aug. 15 Middle East/Africa AI, government, infrastructure, energy and agriculture searches; Reuters recent AI/energy coverage; South Africa national AI policy sources; ITU Africa AI landscape; Middle East data-center and agriculture searches; due follow-up review",
+      "Evidence Rows Added": 0,
+      "Perception Rows Added": 0,
+      "Outcome Rows Added": 0,
+      "Due Follow-Ups Reviewed": 0,
+      "Duplicates Skipped": 0,
+      "No-Data Reason": "No unique same-day source met the evidence or perception threshold.",
+      "Coverage Gaps / Notes": "Aug. 15 Middle East/Africa searches returned older policy, research, conference and infrastructure material but no sufficiently specific same-day operating deployment, measured result, attributable representative perception signal, or mature follow-up. No Evidence row was due for review.",
       "Model / Collector": "GPT-5.6",
       "Rubric Version": "1.0"
     }
