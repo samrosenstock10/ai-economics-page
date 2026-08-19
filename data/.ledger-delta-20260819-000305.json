@@ -1,0 +1,28 @@
+{
+  "meta": {
+    "generatedAt": "2026-08-19T00:03:05-04:00",
+    "latestRun": "2026-08-19 00:03 ET",
+    "rubricVersion": "1.0"
+  },
+  "evidence": [],
+  "perceptions": [],
+  "outcomes": [],
+  "runs": [
+    {
+      "Run Date": "2026-08-18",
+      "Run Timestamp (ET)": "2026-08-19 00:03 ET",
+      "Region Rotation": "Europe",
+      "Sector / Domain Rotation": "Finance, insurance and professional work",
+      "Sources and Queries Checked": "Date-targeted Aug. 18 Europe AI, finance, insurance and professional-services searches; Reuters same-day and recent European banking/AI searches; current finance AI deployment and regulation searches; due follow-up review",
+      "Evidence Rows Added": "0",
+      "Perception Rows Added": "0",
+      "Outcome Rows Added": "0",
+      "Due Follow-Ups Reviewed": "0",
+      "Duplicates Skipped": "0",
+      "No-Data Reason": "No unique same-day source met the evidence or perception threshold.",
+      "Coverage Gaps / Notes": "Aug. 18 Europe finance, insurance and professional-work searches returned older deployments, surveys, regulatory background and commentary, but no sufficiently specific same-day operating deployment, measured result, attributable representative perception signal, or mature follow-up. No Evidence row was due for review.",
+      "Model / Collector": "GPT-5.6",
+      "Rubric Version": "1.0"
+    }
+  ]
+}
