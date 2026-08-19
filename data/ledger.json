@@ -2,15 +2,15 @@
   "meta": {
     "title": "AI Economic Reality Ledger",
     "sourceSpreadsheet": "https://docs.google.com/spreadsheets/d/19t28pwSb8CqnT80fhOwhBkUgGhiAW_kUrYPFlKTeJtk/edit",
-    "generatedAt": "2026-08-17T09:53:00-04:00",
+    "generatedAt": "2026-08-19T00:03:05-04:00",
     "timezone": "America/New_York",
     "rubricVersion": "1.0",
-    "latestRun": "2026-08-17 09:53 ET",
+    "latestRun": "2026-08-19 00:03 ET",
     "counts": {
       "evidence": 34,
       "perceptions": 8,
       "outcomes": 0,
-      "runs": 29
+      "runs": 30
     }
   },
   "evidence": [
@@ -2156,6 +2156,22 @@
       "Duplicates Skipped": 0,
       "No-Data Reason": null,
       "Coverage Gaps / Notes": "One same-day North America infrastructure financing/capacity deal met the threshold. Other search results were older items, commentary or research without a distinct Aug. 17 operating or measured event. No attributable representative perception signal qualified and no Evidence row was due for review.",
+      "Model / Collector": "GPT-5.6",
+      "Rubric Version": "1.0"
+    },
+    {
+      "Run Date": "2026-08-18",
+      "Run Timestamp (ET)": "2026-08-19 00:03 ET",
+      "Region Rotation": "Europe",
+      "Sector / Domain Rotation": "Finance, insurance and professional work",
+      "Sources and Queries Checked": "Date-targeted Aug. 18 Europe AI, finance, insurance and professional-services searches; Reuters same-day and recent European banking/AI searches; current finance AI deployment and regulation searches; due follow-up review",
+      "Evidence Rows Added": "0",
+      "Perception Rows Added": "0",
+      "Outcome Rows Added": "0",
+      "Due Follow-Ups Reviewed": "0",
+      "Duplicates Skipped": "0",
+      "No-Data Reason": "No unique same-day source met the evidence or perception threshold.",
+      "Coverage Gaps / Notes": "Aug. 18 Europe finance, insurance and professional-work searches returned older deployments, surveys, regulatory background and commentary, but no sufficiently specific same-day operating deployment, measured result, attributable representative perception signal, or mature follow-up. No Evidence row was due for review.",
       "Model / Collector": "GPT-5.6",
       "Rubric Version": "1.0"
     }
