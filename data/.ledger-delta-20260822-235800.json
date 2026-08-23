@@ -1,0 +1,28 @@
+{
+  "meta": {
+    "generatedAt": "2026-08-22T23:58:00-04:00",
+    "latestRun": "2026-08-22 23:58 ET",
+    "rubricVersion": "1.0"
+  },
+  "evidence": [],
+  "perceptions": [],
+  "outcomes": [],
+  "runs": [
+    {
+      "Run Date": "2026-08-22",
+      "Run Timestamp (ET)": "2026-08-22 23:58 ET",
+      "Region Rotation": "Middle East & Africa",
+      "Sector / Domain Rotation": "Government, infrastructure, energy and agriculture",
+      "Sources and Queries Checked": "Date-targeted Aug. 22 Middle East/Africa AI, government, infrastructure, energy and agriculture searches; Reuters regional AI searches; Abu Dhabi Department of Energy primary-source review; Africa AI data-center/power-grid coverage; climate-smart agriculture searches; due follow-up review",
+      "Evidence Rows Added": 0,
+      "Perception Rows Added": 0,
+      "Outcome Rows Added": 0,
+      "Due Follow-Ups Reviewed": 0,
+      "Duplicates Skipped": 0,
+      "No-Data Reason": "No unique same-day source met the evidence or perception threshold.",
+      "Coverage Gaps / Notes": "Aug. 22 Middle East/Africa searches produced announced partnerships, prospective AI-lab plans, events and older infrastructure research, but no sufficiently specific same-day operating AI deployment, measured result, attributable representative perception signal, or mature follow-up. No Evidence row was due for review.",
+      "Model / Collector": "GPT-5.6",
+      "Rubric Version": "1.0"
+    }
+  ]
+}
