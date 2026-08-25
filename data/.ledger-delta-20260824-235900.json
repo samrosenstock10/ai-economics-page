@@ -1,0 +1,28 @@
+{
+  "meta": {
+    "generatedAt": "2026-08-24T23:59:00-04:00",
+    "latestRun": "2026-08-24 23:59 ET",
+    "rubricVersion": "1.0"
+  },
+  "evidence": [],
+  "perceptions": [],
+  "outcomes": [],
+  "runs": [
+    {
+      "Run Date": "2026-08-24",
+      "Run Timestamp (ET)": "2026-08-24 23:59 ET",
+      "Region Rotation": "North America",
+      "Sector / Domain Rotation": "Technology, communications and AI infrastructure",
+      "Sources and Queries Checked": "Date-targeted Aug. 24 North America AI deployment, infrastructure, labor and regulation searches; Reuters recent AI infrastructure and data-center searches; current productivity and labor research; due follow-up review",
+      "Evidence Rows Added": 0,
+      "Perception Rows Added": 0,
+      "Outcome Rows Added": 0,
+      "Due Follow-Ups Reviewed": 0,
+      "Duplicates Skipped": 0,
+      "No-Data Reason": "No unique same-day source met the evidence or perception threshold.",
+      "Coverage Gaps / Notes": "Aug. 24 North America searches produced recent Aug. 18-22 infrastructure regulation, pricing and investment items plus older research, but no sufficiently specific new same-day operating deployment, measured result, attributable representative perception signal, or mature follow-up. No Evidence row was due for review.",
+      "Model / Collector": "GPT-5.6",
+      "Rubric Version": "1.0"
+    }
+  ]
+}
