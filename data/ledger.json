@@ -2,15 +2,15 @@
   "meta": {
     "title": "AI Economic Reality Ledger",
     "sourceSpreadsheet": "https://docs.google.com/spreadsheets/d/19t28pwSb8CqnT80fhOwhBkUgGhiAW_kUrYPFlKTeJtk/edit",
-    "generatedAt": "2026-08-24T23:59:00-04:00",
+    "generatedAt": "2026-08-26T00:01:00-04:00",
     "timezone": "America/New_York",
     "rubricVersion": "1.0",
-    "latestRun": "2026-08-24 23:59 ET",
+    "latestRun": "2026-08-26 00:01 ET",
     "counts": {
-      "evidence": 37,
+      "evidence": 38,
       "perceptions": 8,
       "outcomes": 0,
-      "runs": 36
+      "runs": 37
     }
   },
   "evidence": [
@@ -1567,6 +1567,48 @@
       "Rubric Version": "1.0",
       "Model / Collector": "GPT-5.6",
       "Notes": "Missed late-Aug. 20 publication recovered during the Aug. 21 Latin America rotation. Records announced funding and planned capacity, not an operating deployment. Nvidia is expected by officials to win the separate tender but had not been awarded it at collection time."
+    },
+    {
+      "Evidence ID": "E-20260825-001",
+      "Collected At (ET)": "2026-08-26 00:01 ET",
+      "Source Published Date": "2026-08-25",
+      "Company / Organization": "Scalable Capital",
+      "Ticker": null,
+      "Entity Type": "Private company",
+      "Event Type": "Deployment",
+      "AI Capability": "Agents",
+      "World Domain": "Finance & Insurance",
+      "Country": "Germany",
+      "Region": "Europe",
+      "Industry": "Investment brokerage",
+      "Business Function": "Customer investing and portfolio analysis",
+      "Workflow / Use Case": "Portfolio analysis and trading through major AI chatbots",
+      "Transformation Mechanism": "Access",
+      "Deployment Stage": "Production",
+      "Claim / Evidence Summary": "Scalable Capital opened client portfolio analysis and trading access through major AI chatbots including ChatGPT and Claude, extending regulated brokerage workflows beyond its own app and website.",
+      "Impact Type": "Access",
+      "Impact Value": null,
+      "Impact Unit": null,
+      "Baseline / Comparator": "Existing Scalable app and website access",
+      "Time Horizon / Target Date": "Available 2026-08-25",
+      "Affected Group": "Customers",
+      "Labor Effect": "None stated",
+      "Named AI Vendor / Model": "OpenAI ChatGPT; Anthropic Claude",
+      "Likely Value Capturer": "Scalable Capital; participating AI platforms; brokerage customers",
+      "Constraint / Bottleneck": "Security; authentication; model reliability; customer adoption; regulated-investment safeguards",
+      "Evidence Strength (1-5)": 4,
+      "Confidence": "High",
+      "Source Type": "Company deployment via independent news report",
+      "Source Title": "German broker Scalable opens investment platform to major AI chatbots",
+      "Source URL": "https://www.reuters.com/business/finance/german-broker-scalable-opens-investment-platform-major-ai-chatbots-2026-08-25/",
+      "Supporting Excerpt (≤20 words)": "clients can now use major artificial intelligence chatbots such as ChatGPT and Claude to conduct trades and analyze their investment portfolios",
+      "Duplicate Key": "reuters.com/business/finance/german-broker-scalable-opens-investment-platform-major-ai-chatbots-2026-08-25|Scalable-Capital|chatbot-trading-access",
+      "Follow-Up Needed?": "Yes",
+      "Next Review Date": "2026-11-25",
+      "Linked Parent ID": null,
+      "Rubric Version": "1.0",
+      "Model / Collector": "GPT-5.6",
+      "Notes": "Live customer-facing brokerage deployment. Improved investment returns remain an unvalidated management expectation, not an outcome."
     }
   ],
   "perceptions": [
@@ -2394,6 +2436,22 @@
       "Duplicates Skipped": 0,
       "No-Data Reason": "No unique same-day source met the evidence or perception threshold.",
       "Coverage Gaps / Notes": "Aug. 24 North America searches produced recent Aug. 18-22 infrastructure regulation, pricing and investment items plus older research, but no sufficiently specific new same-day operating deployment, measured result, attributable representative perception signal, or mature follow-up. No Evidence row was due for review.",
+      "Model / Collector": "GPT-5.6",
+      "Rubric Version": "1.0"
+    },
+    {
+      "Run Date": "2026-08-25",
+      "Run Timestamp (ET)": "2026-08-26 00:01 ET",
+      "Region Rotation": "Europe",
+      "Sector / Domain Rotation": "Finance, insurance and professional work",
+      "Sources and Queries Checked": "Reuters Aug. 25 Europe AI and finance searches; Scalable Capital deployment; banking and insurance AI searches; finance productivity and labor searches; due follow-up review",
+      "Evidence Rows Added": 1,
+      "Perception Rows Added": 0,
+      "Outcome Rows Added": 0,
+      "Due Follow-Ups Reviewed": 0,
+      "Duplicates Skipped": 0,
+      "No-Data Reason": null,
+      "Coverage Gaps / Notes": "One same-day European finance deployment met the threshold. Broader results were older surveys, regulation or commentary; no representative perception signal qualified and no Evidence row was due for review.",
       "Model / Collector": "GPT-5.6",
       "Rubric Version": "1.0"
     }
