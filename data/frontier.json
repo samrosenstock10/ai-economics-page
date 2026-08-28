@@ -2,16 +2,16 @@
   "meta": {
     "title": "AI Project Tracker",
     "sourceSpreadsheet": "https://docs.google.com/spreadsheets/d/1Q7_v1KKXj9a4Crt5kQxDOki1BxrO0b7xcfByqqWMmPM/edit",
-    "generatedAt": "2026-08-27T22:05:00-04:00",
+    "generatedAt": "2026-08-27T23:04:00-04:00",
     "timezone": "America/New_York",
     "schemaVersion": "2.0",
-    "latestRun": "2026-08-27 substantive research pending final audit",
+    "latestRun": "2026-08-27 daily research complete",
     "counts": {
       "projects": 3,
       "updates": 0,
       "bottlenecks": 3,
       "claims": 4,
-      "runs": 1
+      "runs": 2
     }
   },
   "projects": [
@@ -254,6 +254,22 @@
       "Zero Result?": "No",
       "Coverage Notes": "Created clean project-centric schema; only unambiguous legacy records seeded.",
       "GitHub Commit": "",
+      "Collector": "GPT-5.6 Sol"
+    },
+    {
+      "Run ID": "R-20260827-DAILY",
+      "Run Timestamp ET": "2026-08-27 23:03 ET",
+      "Logical Date": "2026-08-27",
+      "Mode": "daily research",
+      "Sources Reviewed": "SK hynix official groundbreaking disclosure; Reuters corroboration; due-project/open-claim review",
+      "New Projects": 1,
+      "Project Updates": 0,
+      "Bottleneck Signals": 1,
+      "New Claims": 2,
+      "Resolved Claims": 0,
+      "Zero Result?": "No",
+      "Coverage Notes": "Added SK hynix Indiana HBM packaging/testing project; no due claims required resolution. Sheet, GitHub snapshot/workflow, and production verified before final audit publication.",
+      "GitHub Commit": "3bdd9e466186a874f96ea66e7ff3d1321e1d137f",
       "Collector": "GPT-5.6 Sol"
     }
   ]
