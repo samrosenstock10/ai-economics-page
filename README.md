@@ -1,4 +1,4 @@
-# AI Frontier Ledger
+# AI Project Tracker
 
 A prospective, project-first database of real-world AI deployment.
 
