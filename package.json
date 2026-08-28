@@ -1,9 +1,9 @@
 {
-  "name": "ai-economic-reality-ledger",
-  "version": "1.0.0",
+  "name": "ai-frontier-ledger",
+  "version": "2.0.0",
   "private": true,
-  "description": "A public dashboard for a prospective, append-only archive of real-world AI transformation.",
   "scripts": {
+    "test": "node --test tests/*.test.mjs",
     "validate": "node scripts/validate-data.mjs",
     "serve": "python3 -m http.server 4173"
   }
