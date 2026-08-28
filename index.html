@@ -3,84 +3,79 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="A dated, source-backed record of real-world AI claims, deployments, and measured results.">
-  <meta name="theme-color" content="#f7f7f5">
-  <title>AI Economic Reality Ledger</title>
+  <meta name="description" content="A source-backed database of real-world AI projects, deployments, bottlenecks and claims preserved over time.">
+  <meta name="theme-color" content="#f6f6f3">
+  <title>AI Frontier Ledger</title>
   <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
   <main>
     <header class="site-header">
-      <div class="header-copy">
-        <p class="label">AI Economic Reality Ledger</p>
-        <h1>A record of what is actually happening with AI.</h1>
-        <p class="intro">Source-backed claims, deployments, constraints, and measured results—preserved over time so early expectations can eventually be tested against outcomes.</p>
+      <div>
+        <p class="eyebrow">AI Frontier Ledger</p>
+        <h1>Real-world AI projects, preserved over time.</h1>
+        <p class="intro">A project-first database of what organizations are actually building with AI, where each project stands, what is blocking it, and what later evidence shows.</p>
       </div>
       <div class="header-meta">
-        <span>Last updated</span>
-        <strong id="updated-at">Loading…</strong>
-        <a class="sheet-link" href="#" target="_blank" rel="noreferrer">Source spreadsheet ↗</a>
+        <span>Updated <strong id="updated-at">—</strong></span>
+        <a class="sheet-link" href="#" target="_blank" rel="noreferrer">Open source data ↗</a>
       </div>
     </header>
 
-    <section class="dataset-summary" aria-label="Dataset summary">
-      <div><strong id="evidence-count">—</strong><span>evidence records</span></div>
-      <div><strong id="run-count">—</strong><span>collection runs</span></div>
-      <div><strong id="perception-count">—</strong><span>perception records</span></div>
-      <div><strong id="outcome-count">—</strong><span>follow-up outcomes</span></div>
-    </section>
-
-    <section class="chart-section" aria-labelledby="chart-title">
-      <div class="section-heading">
+    <section class="database-section" aria-labelledby="database-title">
+      <div class="database-heading">
         <div>
-          <p class="label">Current evidence base</p>
-          <h2 id="chart-title">Evidence by deployment stage</h2>
+          <p class="eyebrow">Database</p>
+          <h2 id="database-title">Projects</h2>
         </div>
-        <p>This is the most useful question the dataset can answer today: how much of the record is still an announcement, and how much reflects operating or measured activity?</p>
+        <p id="records-note">Loading…</p>
       </div>
-      <div id="stage-chart" class="stage-chart"></div>
-      <p class="method-note">Bars show the number of logged records. Evidence score is the average source-strength rating within each stage. Counts describe this archive, not adoption rates. “Not specified” covers policy or research records where deployment stage is not applicable.</p>
-    </section>
 
-    <section class="records-section" aria-labelledby="records-title">
-      <div class="section-heading records-heading">
-        <div>
-          <p class="label">Underlying record</p>
-          <h2 id="records-title">Evidence log</h2>
-        </div>
-        <p id="records-note">Every row links back to its original source.</p>
+      <div class="controls" aria-label="Project filters">
+        <label class="search-control">
+          <span>Search</span>
+          <input id="project-search" type="search" placeholder="Entity, use case, bottleneck…" autocomplete="off">
+        </label>
+        <label>
+          <span>Domain</span>
+          <select id="domain-filter"><option value="">All domains</option></select>
+        </label>
+        <label>
+          <span>Stage</span>
+          <select id="stage-filter"><option value="">All stages</option></select>
+        </label>
+        <label>
+          <span>Bottleneck</span>
+          <select id="bottleneck-filter"><option value="">All bottlenecks</option></select>
+        </label>
       </div>
 
       <div class="table-frame">
         <table>
           <thead>
             <tr>
-              <th>Date</th>
-              <th>Entity</th>
-              <th>What happened</th>
+              <th>Updated</th>
+              <th>Project</th>
+              <th>Category</th>
               <th>Stage</th>
-              <th>Strength</th>
+              <th>Scale</th>
+              <th>Bottleneck</th>
+              <th>Measured signal</th>
               <th>Source</th>
             </tr>
           </thead>
-          <tbody id="records-body"></tbody>
+          <tbody id="projects-body"></tbody>
         </table>
       </div>
-    </section>
-
-    <section class="withheld-section" aria-labelledby="withheld-title">
-      <p class="label">Deliberately not analyzed yet</p>
-      <h2 id="withheld-title">The rest of the dataset is not mature enough.</h2>
-      <p id="withheld-copy">Perception and outcome data remain available in the source spreadsheet, but are not charted until the sample can support a useful conclusion.</p>
+      <div id="empty-state" class="empty-state" hidden>No projects match these filters.</div>
     </section>
 
     <footer>
-      <p>Append-only methodology: original claims remain unchanged; later evidence is added separately.</p>
-      <a class="sheet-link" href="#" target="_blank" rel="noreferrer">View data and methodology ↗</a>
+      <p>v2 tracks projects longitudinally. The original v1 evidence archive remains preserved in GitHub.</p>
+      <a class="sheet-link" href="#" target="_blank" rel="noreferrer">Methodology and full tables ↗</a>
     </footer>
   </main>
-
-  <div id="load-error" role="alert" hidden>The current data snapshot could not be loaded.</div>
+  <div id="load-error" role="alert" hidden>The current project database could not be loaded.</div>
   <script src="./app.js" defer></script>
 </body>
 </html>
