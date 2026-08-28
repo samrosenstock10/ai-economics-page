@@ -1,16 +1,16 @@
-name: Assemble AI Economic Reality Ledger
+name: Assemble AI Frontier Ledger
 
 on:
   push:
     paths:
-      - 'data/.ledger-delta-*.json'
+      - 'data/.frontier-delta-*.json'
   workflow_dispatch:
 
 permissions:
   contents: write
 
 concurrency:
-  group: assemble-ledger
+  group: assemble-frontier-ledger
   cancel-in-progress: true
 
 jobs:
@@ -21,23 +21,23 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Merge deltas into ledger
-        run: node scripts/apply-ledger-deltas.mjs
+      - name: Merge deltas into frontier snapshot
+        run: node scripts/apply-frontier-deltas.mjs
 
-      - name: Validate ledger
+      - name: Validate frontier snapshot
         run: npm run validate
 
-      - name: Commit validated ledger and clean deltas
+      - name: Commit validated snapshot and clean deltas
         shell: bash
         run: |
-          rm -f data/.ledger-delta-*.json data/.ledger-part-*
+          rm -f data/.frontier-delta-*.json data/.frontier-part-*
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/ledger.json
+          git add data/frontier.json
           git add -u -- data
           if git diff --cached --quiet; then
-            echo "No ledger changes to commit."
+            echo "No frontier changes to commit."
             exit 0
           fi
-          git commit -m "Sync AI economic reality ledger"
+          git commit -m "Sync AI Frontier Ledger"
           git push
