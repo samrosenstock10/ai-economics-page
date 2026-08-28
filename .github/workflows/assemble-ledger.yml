@@ -1,4 +1,4 @@
-name: Assemble AI Frontier Ledger
+name: Assemble AI Project Tracker
 
 on:
   push:
@@ -10,7 +10,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: assemble-frontier-ledger
+  group: assemble-ai-project-tracker
   cancel-in-progress: true
 
 jobs:
@@ -21,10 +21,10 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Merge deltas into frontier snapshot
+      - name: Merge deltas into project snapshot
         run: node scripts/apply-frontier-deltas.mjs
 
-      - name: Validate frontier snapshot
+      - name: Validate project snapshot
         run: npm run validate
 
       - name: Commit validated snapshot and clean deltas
@@ -36,8 +36,8 @@ jobs:
           git add data/frontier.json
           git add -u -- data
           if git diff --cached --quiet; then
-            echo "No frontier changes to commit."
+            echo "No tracker changes to commit."
             exit 0
           fi
-          git commit -m "Sync AI Frontier Ledger"
+          git commit -m "Sync AI Project Tracker"
           git push
