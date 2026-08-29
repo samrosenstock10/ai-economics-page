@@ -1,0 +1,57 @@
+{
+  "meta": {
+    "generatedAt": "2026-08-28T22:58:00-04:00",
+    "logicalDate": "2026-08-28",
+    "schemaVersion": "2.0",
+    "sourceSpreadsheet": "https://docs.google.com/spreadsheets/d/1Q7_v1KKXj9a4Crt5kQxDOki1BxrO0b7xcfByqqWMmPM/edit"
+  },
+  "projects": [
+    {
+      "Project ID": "P-20260828-META-DATACENTER-ROBOTICS",
+      "First Seen": "2026-08-28",
+      "Last Updated": "2026-08-28",
+      "Entity": "Meta Platforms",
+      "Ticker": "META",
+      "Country": "United States",
+      "Domain": "Manufacturing, Robotics & Logistics",
+      "Use Case": "Robotic data-center maintenance and operations",
+      "Project Summary": "Meta is piloting robots inside live data centers to automate technician tasks including network-cable handling, server power cycling, component reseating, rack movement and equipment inspection.",
+      "Stage": "Pilot",
+      "Scale": "Trials span Altoona, Iowa and Prometheus in New Albany, Ohio; two Watney dual-arm units have handled supervised cabling work in Altoona since June 2025, with ABB and Kinova systems tested for other maintenance tasks.",
+      "Primary Bottleneck": "Reliability",
+      "Secondary Bottlenecks": "Integration; Physical Hardware",
+      "Economic Mechanism": "Reduce manual maintenance workload and improve incident response as AI data-center footprint scales",
+      "Measured Metric": "",
+      "Measured Value": "",
+      "Metric Unit": "",
+      "Source Quality": 3,
+      "Primary Source": "",
+      "Discovery Source": "https://www.wired.com/story/inside-metas-experiments-with-data-center-robots/",
+      "Next Review": "2026-11-28",
+      "Status": "Active",
+      "Enabling Vendors": "Watney Robotics; Kinova; ABB",
+      "Notes": "Wired reports the specific trials from current and former workers; Meta declined to comment on the individual tests. Do not treat worker estimates of potential labor displacement as company targets or measured outcomes.",
+      "Legacy Evidence ID": ""
+    }
+  ],
+  "updates": [],
+  "bottlenecks": [
+    {
+      "Signal ID": "B-20260828-META-RELIABILITY-001",
+      "Date": "2026-08-28",
+      "Scope": "Project",
+      "Domain": "Manufacturing, Robotics & Logistics",
+      "Bottleneck": "Reliability",
+      "Direction": "Open",
+      "Evidence Summary": "Meta's maintenance robots remain human-supervised and slower than technicians; reported limitations include battery downtime, navigation around cables/corners, grayscale vision that cannot distinguish red/green status lights, and inability to handle dense Nvidia GB300 cabling.",
+      "Speaker / Entity": "Meta Platforms",
+      "Authority Type": "Employee-sourced reporting",
+      "Source Quality": 3,
+      "Source URL": "https://www.wired.com/story/inside-metas-experiments-with-data-center-robots/",
+      "Linked Project IDs": "P-20260828-META-DATACENTER-ROBOTICS",
+      "Notes": "Concrete operating constraints observed in live data-center trials; treat as reported pilot limitations, not a company-wide capability statement."
+    }
+  ],
+  "claims": [],
+  "runs": []
+}
