@@ -1,0 +1,29 @@
+{
+  "meta": {
+    "generatedAt": "2026-08-30T22:04:14-04:00",
+    "logicalDate": "2026-08-30",
+    "latestRun": "2026-08-30 end-to-end verified"
+  },
+  "projects": [],
+  "updates": [],
+  "bottlenecks": [],
+  "claims": [],
+  "runs": [
+    {
+      "Run ID": "R-20260830-DAILY",
+      "Run Timestamp ET": "2026-08-30 22:04 ET",
+      "Logical Date": "2026-08-30",
+      "Mode": "daily research",
+      "Sources Reviewed": "Due-project/open-claim review; Nscale Monarch Compute Campus primary disclosure; Reuters and Financial Times Anthropic capacity reporting; fresh real-world AI deployment search",
+      "New Projects": 1,
+      "Project Updates": 0,
+      "Bottleneck Signals": 1,
+      "New Claims": 1,
+      "Resolved Claims": 0,
+      "Zero Result?": "No",
+      "Coverage Notes": "Added Nscale Monarch Compute Campus / Anthropic dedicated-capacity project, power bottleneck, and late-2027 operating milestone claim. No due claims required resolution. Sheet rows, GitHub assembly, frontier snapshot, Vercel READY deployment and stable production JSON verified before final audit row.",
+      "GitHub Commit": "18e0a2ce2eb0bf69c256f96f53bc92fccf5ad1ca",
+      "Collector": "GPT-5.6 Sol"
+    }
+  ]
+}
