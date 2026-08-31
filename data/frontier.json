@@ -2,18 +2,18 @@
   "meta": {
     "title": "AI Project Tracker",
     "sourceSpreadsheet": "https://docs.google.com/spreadsheets/d/1Q7_v1KKXj9a4Crt5kQxDOki1BxrO0b7xcfByqqWMmPM/edit",
-    "generatedAt": "2026-08-29T21:00:00-04:00",
+    "generatedAt": "2026-08-30T22:01:31-04:00",
     "timezone": "America/New_York",
     "schemaVersion": "2.0",
     "latestRun": "2026-08-29 end-to-end verified",
     "counts": {
-      "projects": 5,
+      "projects": 6,
       "updates": 0,
-      "bottlenecks": 5,
-      "claims": 4,
+      "bottlenecks": 6,
+      "claims": 5,
       "runs": 4
     },
-    "logicalDate": "2026-08-29"
+    "logicalDate": "2026-08-30"
   },
   "projects": [
     {
@@ -150,6 +150,33 @@
       "Enabling Vendors": "HHMI Janelia; Genentech; Carnegie Mellon University; QuEra",
       "Notes": "Treat partner-reported preview results as early pilot evidence, not proof of general autonomous-lab reliability. MHS remains a limited research preview and is not yet open source.",
       "Legacy Evidence ID": ""
+    },
+    {
+      "Project ID": "P-20260830-NSCALE-MONARCH-ANTHROPIC",
+      "First Seen": "2026-08-30",
+      "Last Updated": "2026-08-30",
+      "Entity": "Nscale",
+      "Ticker": "",
+      "Country": "United States",
+      "Domain": "AI Infrastructure & Energy",
+      "Use Case": "Dedicated AI compute capacity for Anthropic at Monarch Compute Campus",
+      "Project Summary": "Nscale is developing the Monarch Compute Campus in Mason County, West Virginia, and high-quality reporting says Anthropic has contracted roughly 460 MW of Nvidia Vera Rubin compute there under a six-year agreement expected to begin serving in late 2027.",
+      "Stage": "Announced",
+      "Scale": "2,250-acre campus with an onsite microgrid scalable to over 8 GW; Anthropic reportedly contracted ~460 MW for six years",
+      "Primary Bottleneck": "Power",
+      "Secondary Bottlenecks": "Compute; Manufacturing Capacity",
+      "Economic Mechanism": "Secure dedicated powered AI compute capacity while reducing dependence on conventional grid interconnection",
+      "Measured Metric": "Reported Anthropic contracted capacity",
+      "Measured Value": 460,
+      "Metric Unit": "MW",
+      "Source Quality": 4,
+      "Primary Source": "https://www.nscale.com/press-releases/nscale-acquires-american-intelligence-power-corporation",
+      "Discovery Source": "https://www.reuters.com/technology/anthropic-pay-nscale-45-billion-rent-ai-computing-power-bloomberg-news-reports-2026-08-26/",
+      "Next Review": "2026-11-30",
+      "Status": "Active",
+      "Enabling Vendors": "Nvidia; Anthropic",
+      "Notes": "Nscale's primary materials confirm the Monarch site and onsite-power design; the Anthropic tenant terms are from Reuters/FT reporting rather than a company announcement. Do not treat the 460 MW as online until later operating evidence confirms delivery.",
+      "Legacy Evidence ID": ""
     }
   ],
   "updates": [],
@@ -228,6 +255,21 @@
       "Source URL": "https://www.publicnow.com/view/153F18BFEA2A8B3C55BBEEEBC1685D4D22B67A3E",
       "Linked Project IDs": "P-20260829-ANTHROPIC-MHS",
       "Notes": "Integration is a concrete gating constraint for multi-instrument AI workflows; safety and reliability remain separate open issues during the preview."
+    },
+    {
+      "Signal ID": "B-20260830-NSCALE-POWER-001",
+      "Date": "2026-08-30",
+      "Scope": "Project",
+      "Domain": "AI Infrastructure & Energy",
+      "Bottleneck": "Power",
+      "Direction": "Open",
+      "Evidence Summary": "Nscale designed Monarch around an onsite state-certified AI microgrid scalable to more than 8 GW, explicitly addressing powered-site availability as a gating constraint; the Anthropic agreement reportedly anchors about 460 MW of future compute capacity.",
+      "Speaker / Entity": "Nscale",
+      "Authority Type": "Company / corroborated reporting",
+      "Source Quality": 5,
+      "Source URL": "https://www.nscale.com/press-releases/nscale-acquires-american-intelligence-power-corporation",
+      "Linked Project IDs": "P-20260830-NSCALE-MONARCH-ANTHROPIC",
+      "Notes": "The project addresses the power bottleneck through onsite generation rather than a conventional grid connection; construction, permitting and future chip delivery remain execution dependencies."
     }
   ],
   "claims": [
@@ -322,6 +364,29 @@
       "Delay Days": "",
       "Resolution Source": "",
       "Notes": ""
+    },
+    {
+      "Claim ID": "C-20260830-NSCALE-ANTHROPIC-2027",
+      "Project ID": "P-20260830-NSCALE-MONARCH-ANTHROPIC",
+      "Claim Date": "2026-08-26",
+      "Claimant": "Nscale / Anthropic (reported agreement)",
+      "Claim Type": "Operating milestone",
+      "Baseline": "Monarch Compute Campus under development",
+      "Target": "Anthropic-dedicated Vera Rubin capacity begins serving",
+      "Unit": "milestone",
+      "Target Date": "2027-H2",
+      "Original Claim": "Anthropic's roughly 460 MW of Nvidia Vera Rubin compute at Nscale's Monarch campus is expected to begin coming online in late 2027.",
+      "Source Quality": 4,
+      "Source URL": "https://www.reuters.com/technology/anthropic-pay-nscale-45-billion-rent-ai-computing-power-bloomberg-news-reports-2026-08-26/",
+      "Next Review": "2027-03-31",
+      "Resolution Status": "Open",
+      "Resolution Date": "",
+      "Actual Result": "",
+      "Actual Unit": "",
+      "Realization %": "",
+      "Delay Days": "",
+      "Resolution Source": "",
+      "Notes": "Target timing and capacity are from high-quality reporting, not a joint company announcement; resolve only with later operating or customer evidence."
     }
   ],
   "runs": [
