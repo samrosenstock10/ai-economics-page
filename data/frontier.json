@@ -2,16 +2,16 @@
   "meta": {
     "title": "AI Project Tracker",
     "sourceSpreadsheet": "https://docs.google.com/spreadsheets/d/1Q7_v1KKXj9a4Crt5kQxDOki1BxrO0b7xcfByqqWMmPM/edit",
-    "generatedAt": "2026-08-31T21:06:00-04:00",
+    "generatedAt": "2026-08-31T21:15:00-04:00",
     "timezone": "America/New_York",
     "schemaVersion": "2.0",
-    "latestRun": "2026-08-31 substantive research published",
+    "latestRun": "2026-08-31 end-to-end verified",
     "counts": {
       "projects": 9,
       "updates": 0,
       "bottlenecks": 8,
       "claims": 7,
-      "runs": 5
+      "runs": 6
     },
     "logicalDate": "2026-08-31"
   },
@@ -625,6 +625,22 @@
       "Zero Result?": "No",
       "Coverage Notes": "Added Nscale Monarch Compute Campus / Anthropic dedicated-capacity project, power bottleneck, and late-2027 operating milestone claim. No due claims required resolution. Sheet rows, GitHub assembly, frontier snapshot, Vercel READY deployment and stable production JSON verified before final audit row.",
       "GitHub Commit": "18e0a2ce2eb0bf69c256f96f53bc92fccf5ad1ca",
+      "Collector": "GPT-5.6 Sol"
+    },
+    {
+      "Run ID": "R-20260831-DAILY",
+      "Run Timestamp ET": "2026-08-31 21:14 ET",
+      "Logical Date": "2026-08-31",
+      "Mode": "daily research",
+      "Sources Reviewed": "Due-project/open-claim review; WHILL Changi autonomous mobility primary disclosure; AMD/Cisco/HUMAIN production compute primary disclosure; NEOM/HUMAIN/DataVolt Oxagon primary disclosure; Reuters corroboration; fresh real-world AI deployment search",
+      "New Projects": 3,
+      "Project Updates": 0,
+      "Bottleneck Signals": 2,
+      "New Claims": 2,
+      "Resolved Claims": 0,
+      "Zero Result?": "No",
+      "Coverage Notes": "Added Changi autonomous mobility production deployment, HUMAIN AMD/Cisco production GPU service, and HUMAIN-DataVolt Oxagon build; no due claims required resolution. Sheet rows, GitHub assembly, frontier snapshot, Vercel READY deployment and stable production JSON verified before final audit row.",
+      "GitHub Commit": "34e59ebd9dc672b7274dc20bc7fef3a3d1fe07c6",
       "Collector": "GPT-5.6 Sol"
     }
   ]
