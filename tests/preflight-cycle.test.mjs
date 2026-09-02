@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { buildAutomationStatus, classifyCycle, validateAutomationStatus, validateFrontier } from '../scripts/preflight-cycle.mjs';
+import { buildAutomationStatus, classifyCycle, logicalDateForMostRecentAnchor, validateAutomationStatus, validateFrontier } from '../scripts/preflight-cycle.mjs';
 
 function frontier(overrides = {}) {
   const value = {
@@ -32,10 +32,16 @@ test('classifies a verified same-date frontier as complete', () => {
   assert.equal(result.status, 'GITHUB_COMPLETE');
 });
 
-test('prioritizes pending deltas over a complete frontier', () => {
+test('prioritizes pending delta inputs over a complete frontier', () => {
   const result = classifyCycle({ frontier: frontier(), logicalDate: '2026-09-01', pendingDeltas: ['.frontier-delta-2026-09-01-2200.json'] });
   assert.equal(result.status, 'PUBLICATION_PENDING');
-  assert.equal(result.reason, 'pending_frontier_deltas');
+  assert.equal(result.reason, 'pending_frontier_inputs');
+});
+
+test('prioritizes pending part inputs over a complete frontier', () => {
+  const result = classifyCycle({ frontier: frontier(), logicalDate: '2026-09-01', pendingDeltas: ['.frontier-part-2026-09-01-01'] });
+  assert.equal(result.status, 'PUBLICATION_PENDING');
+  assert.equal(result.reason, 'pending_frontier_inputs');
 });
 
 test('classifies an older frontier as stale', () => {
@@ -60,4 +66,12 @@ test('builds and validates a compact status snapshot', () => {
   const status = buildAutomationStatus(value, []);
   assert.equal(status.githubComplete, true);
   assert.deepEqual(validateAutomationStatus(status, value, []), { logicalDate: '2026-09-01', githubComplete: true, pendingDeltas: 0 });
+});
+
+test('resolves the prior date before the 9 PM New York anchor', () => {
+  assert.equal(logicalDateForMostRecentAnchor(new Date('2026-09-02T14:00:00Z')), '2026-09-01');
+});
+
+test('resolves the current date after the 9 PM New York anchor', () => {
+  assert.equal(logicalDateForMostRecentAnchor(new Date('2026-09-03T02:00:00Z')), '2026-09-02');
 });
