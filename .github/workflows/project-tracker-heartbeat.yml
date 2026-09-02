@@ -1,0 +1,127 @@
+name: Monitor AI Project Tracker parity
+
+on:
+  schedule:
+    - cron: '17 15 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: ai-project-tracker-parity
+  cancel-in-progress: true
+
+jobs:
+  parity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+
+      - name: Resolve the latest due New York logical date
+        id: anchor
+        shell: bash
+        run: echo "logical_date=$(node scripts/preflight-cycle.mjs --print-expected-logical-date)" >> "$GITHUB_OUTPUT"
+
+      - name: Classify committed GitHub state
+        id: preflight
+        continue-on-error: true
+        run: npm run preflight -- --logical-date "${{ steps.anchor.outputs.logical_date }}"
+
+      - name: Fetch deployed frontier with bounded retries
+        id: fetch
+        continue-on-error: true
+        run: curl --fail --silent --show-error --location --retry 5 --retry-delay 5 --retry-all-errors https://ai-economic-reality-ledger.vercel.app/data/frontier.json --output /tmp/production-frontier.json
+
+      - name: Compare deployed frontier with current main
+        id: compare
+        if: steps.fetch.outcome == 'success'
+        continue-on-error: true
+        shell: bash
+        run: |
+          node --input-type=module <<'EOF'
+          import { readFile } from 'node:fs/promises';
+          import { isDeepStrictEqual } from 'node:util';
+          const expected = JSON.parse(await readFile('data/frontier.json', 'utf8'));
+          const actual = JSON.parse(await readFile('/tmp/production-frontier.json', 'utf8'));
+          if (!isDeepStrictEqual(actual, expected)) {
+            throw new Error('production_frontier_differs_from_main');
+          }
+          EOF
+
+      - name: Open, refresh, or close one parity incident
+        uses: actions/github-script@v7
+        env:
+          EXPECTED_LOGICAL_DATE: ${{ steps.anchor.outputs.logical_date }}
+          GITHUB_STATUS: ${{ steps.preflight.outputs.status }}
+          GITHUB_REASON: ${{ steps.preflight.outputs.reason }}
+          COMMITTED_LOGICAL_DATE: ${{ steps.preflight.outputs.logical_date }}
+          PENDING_INPUTS: ${{ steps.preflight.outputs.pending_deltas }}
+          FETCH_OUTCOME: ${{ steps.fetch.outcome }}
+          COMPARE_OUTCOME: ${{ steps.compare.outcome }}
+          TITLE: AI Project Tracker parity alert
+        with:
+          script: |
+            const title = process.env.TITLE;
+            const healthy =
+              process.env.GITHUB_STATUS === 'GITHUB_COMPLETE' &&
+              process.env.FETCH_OUTCOME === 'success' &&
+              process.env.COMPARE_OUTCOME === 'success';
+            const issues = await github.paginate(github.rest.issues.listForRepo, {
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'all',
+              per_page: 100,
+            });
+            const issue = issues.find((item) => !item.pull_request && item.title === title);
+            if (healthy) {
+              if (issue?.state === 'open') {
+                await github.rest.issues.update({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: issue.number,
+                  state: 'closed',
+                  state_reason: 'completed',
+                });
+              }
+              return;
+            }
+            const body = [
+              '## AI Project Tracker parity',
+              '',
+              `Expected logical date: ${process.env.EXPECTED_LOGICAL_DATE || 'unknown'}`,
+              `Committed logical date: ${process.env.COMMITTED_LOGICAL_DATE || 'unknown'}`,
+              `GitHub state: ${process.env.GITHUB_STATUS || 'unknown'}`,
+              `GitHub reason: ${process.env.GITHUB_REASON || 'unknown'}`,
+              `Pending publication inputs: ${process.env.PENDING_INPUTS || 'unknown'}`,
+              `Production fetch: ${process.env.FETCH_OUTCOME || 'unknown'}`,
+              `Production parity: ${process.env.COMPARE_OUTCOME || 'unknown'}`,
+              '',
+              'The next scheduled invocation must resume only the incomplete research, publication, or production layer. Do not create duplicate project records or skip an older unfinished logical cycle.',
+            ].join('\n');
+            if (issue) {
+              await github.rest.issues.update({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issue.number,
+                body,
+                state: 'open',
+              });
+            } else {
+              await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title,
+                body,
+              });
+            }
+
+      - name: Fail on unresolved stale state or production divergence
+        if: steps.preflight.outputs.status != 'GITHUB_COMPLETE' || steps.fetch.outcome != 'success' || steps.compare.outcome != 'success'
+        run: exit 1
