@@ -2,16 +2,16 @@
   "meta": {
     "title": "AI Project Tracker",
     "sourceSpreadsheet": "https://docs.google.com/spreadsheets/d/1Q7_v1KKXj9a4Crt5kQxDOki1BxrO0b7xcfByqqWMmPM/edit",
-    "generatedAt": "2026-09-01T22:19:00-04:00",
+    "generatedAt": "2026-09-01T22:17:41-04:00",
     "timezone": "America/New_York",
     "schemaVersion": "2.0",
-    "latestRun": "2026-09-01 substantive rows pending final end-to-end verification",
+    "latestRun": "2026-09-01 end-to-end verified",
     "counts": {
       "projects": 11,
       "updates": 0,
       "bottlenecks": 10,
       "claims": 8,
-      "runs": 6
+      "runs": 7
     },
     "logicalDate": "2026-09-01"
   },
@@ -748,6 +748,22 @@
       "Zero Result?": "No",
       "Coverage Notes": "Added Changi autonomous mobility production deployment, HUMAIN AMD/Cisco production GPU service, and HUMAIN-DataVolt Oxagon build; no due claims required resolution. Sheet rows, GitHub assembly, frontier snapshot, Vercel READY deployment and stable production JSON verified before final audit row.",
       "GitHub Commit": "34e59ebd9dc672b7274dc20bc7fef3a3d1fe07c6",
+      "Collector": "GPT-5.6 Sol"
+    },
+    {
+      "Run ID": "R-20260901-DAILY",
+      "Run Timestamp ET": "2026-09-01 22:16 ET",
+      "Logical Date": "2026-09-01",
+      "Mode": "daily research",
+      "Sources Reviewed": "Due-project/open-claim review; Waymo Denver/San Diego/Tampa primary deployment disclosure; Fervo/Google Cape Station PPA primary disclosure; Reuters corroboration; fresh real-world AI deployment search",
+      "New Projects": 2,
+      "Project Updates": 0,
+      "Bottleneck Signals": 2,
+      "New Claims": 1,
+      "Resolved Claims": 0,
+      "Zero Result?": "No",
+      "Coverage Notes": "Added Waymo public fully autonomous ride-hailing expansion and Fervo/Google 396 MW geothermal capacity project; no due claims required resolution. Substantive Sheet rows, GitHub assembly, frontier snapshot, Vercel READY deployment and stable production JSON verified before final audit row.",
+      "GitHub Commit": "f828b507b8ea5b3fcbec0b84240de044884169a2",
       "Collector": "GPT-5.6 Sol"
     }
   ]
