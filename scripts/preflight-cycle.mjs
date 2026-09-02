@@ -21,6 +21,28 @@ function validateDate(value, path) {
   invariant(!Number.isNaN(parsed.getTime()) && parsed.toISOString().slice(0, 10) === value, `${path}_invalid:${value}`);
 }
 
+function subtractCalendarDay(date) {
+  const parsed = new Date(`${date}T00:00:00Z`);
+  parsed.setUTCDate(parsed.getUTCDate() - 1);
+  return parsed.toISOString().slice(0, 10);
+}
+
+export function logicalDateForMostRecentAnchor(now = new Date()) {
+  const parts = new Intl.DateTimeFormat('en-CA', {
+    timeZone: EXPECTED.timezone,
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+    hour: '2-digit',
+    hourCycle: 'h23',
+  }).formatToParts(now);
+  const values = Object.fromEntries(parts.map(({ type, value }) => [type, value]));
+  const localDate = `${values.year}-${values.month}-${values.day}`;
+  const localHour = Number(values.hour);
+  invariant(Number.isInteger(localHour) && localHour >= 0 && localHour <= 23, `new_york_hour_invalid:${values.hour}`);
+  return localHour >= 21 ? localDate : subtractCalendarDay(localDate);
+}
+
 export function validateFrontier(frontier) {
   invariant(frontier && typeof frontier === 'object' && !Array.isArray(frontier), 'frontier_not_object');
   const meta = frontier.meta;
@@ -53,7 +75,11 @@ export function validateFrontier(frontier) {
 export async function findPendingDeltas(dataDirectory = 'data') {
   const entries = await readdir(dataDirectory, { withFileTypes: true });
   return entries
-    .filter((entry) => entry.isFile() && /^\.frontier-delta-.+\.json$/.test(entry.name))
+    .filter(
+      (entry) =>
+        entry.isFile() &&
+        (/^\.frontier-delta-.+\.json$/.test(entry.name) || /^\.frontier-part-.+/.test(entry.name)),
+    )
     .map((entry) => entry.name)
     .sort();
 }
@@ -63,7 +89,7 @@ export function classifyCycle({ frontier, logicalDate, pendingDeltas = [] }) {
     validateDate(logicalDate, 'requested_logical_date');
     const validated = validateFrontier(frontier);
     if (pendingDeltas.length > 0) {
-      return { status: 'PUBLICATION_PENDING', reason: 'pending_frontier_deltas', pendingDeltas, ...validated };
+      return { status: 'PUBLICATION_PENDING', reason: 'pending_frontier_inputs', pendingDeltas, ...validated };
     }
     if (validated.logicalDate > logicalDate) {
       return { status: 'INVALID_STATE', reason: 'frontier_ahead_of_requested_logical_date', pendingDeltas, ...validated };
@@ -119,6 +145,11 @@ function argValue(args, name, fallback = null) {
 
 async function main() {
   const args = process.argv.slice(2);
+  if (args.includes('--print-expected-logical-date')) {
+    console.log(logicalDateForMostRecentAnchor());
+    return;
+  }
+
   const frontierPath = argValue(args, '--frontier', 'data/frontier.json');
   const statusPath = argValue(args, '--status', 'data/automation-status.json');
   const dataDirectory = argValue(args, '--data-directory', 'data');
