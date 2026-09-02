@@ -5,6 +5,9 @@
   "scripts": {
     "test": "node --test tests/*.test.mjs",
     "validate": "node scripts/validate-data.mjs",
+    "preflight": "node scripts/preflight-cycle.mjs",
+    "status:write": "node scripts/preflight-cycle.mjs --write-status",
+    "status:validate": "node scripts/preflight-cycle.mjs --validate-only",
     "serve": "python3 -m http.server 4173"
   }
 }
