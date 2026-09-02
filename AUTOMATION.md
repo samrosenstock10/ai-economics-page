@@ -15,28 +15,39 @@ The core question is:
 - Production: https://ai-economic-reality-ledger.vercel.app
 - Vercel project: `prj_39ATqq1AzAUk0Hu6cfTEcv5P3g1e`
 - Active snapshot: `data/frontier.json`
+- Compact recovery state: `data/automation-status.json`
 - Historical v1 archive: `data/ledger.json`
 - Schema version: 2.0
 - Timezone: America/New_York
+
+## Mandatory cheap preflight
+
+This section overrides any older instruction to read every Sheet tab at the start of every recovery invocation.
+
+1. Resolve `logical_date` from the most recent 9:00 PM America/New_York anchor. From midnight through 8:59 AM, the logical date is the prior calendar date.
+2. Before loading the full database or doing public research, read only `data/automation-status.json`, the `Runs` row or rows for `logical_date`, any open exact-title parity incident, current Vercel production status, and the stable production URL.
+3. Treat GitHub as complete only when the compact status has schema `1.0.0`, `pendingDeltas` is empty, `githubComplete` is true, and its frontier logical date equals `logical_date`. The matching Sheet Run must truthfully state end-to-end completion, and production must be `READY`, HTTP 200, and current.
+4. If all three layers pass, stop silently. Do not read `Methodology`, `Projects`, `Updates`, `Bottlenecks`, `Claims`, `Taxonomy`, the full frontier snapshot, or public sources. Do not repeat research, append a Run row, commit, deploy, change a timestamp, notify, or email merely because a recovery invocation fired.
+5. If GitHub reports pending publication inputs or an unverified latest run while the Sheet is complete, perform publication recovery only. Do not redo research or recreate Sheet rows.
+6. If GitHub's logical date is older than `logical_date`, the Sheet Run is absent/incomplete, or a prior-48-hour cycle is unresolved, then load the full current context required for substantive work or precise partial-write recovery.
+7. If GitHub is complete but production is stale, perform production recovery only against the existing Vercel project. Do not touch the Sheet or create another GitHub data commit.
+8. A malformed or internally inconsistent compact status is a system invariant failure. Preserve the last valid production state and inspect current `data/frontier.json` plus GitHub workflows before any mutation.
 
 ## Scheduler-level recovery loop
 
 The 9:00 PM ET invocation is the single daily anchor. The 10 PM, 11 PM, midnight, 1 AM, 2 AM, 3 AM, 4 AM, 5 AM, 6 AM, 7 AM, and 8 AM invocations are recovery checks for that same logical cycle, not separate research days.
 
-At the start of every invocation:
+After the mandatory cheap preflight, continue only when a layer is incomplete:
 
-1. Compute `logical_date` from the most recent 9 PM ET anchor. From midnight through 8:59 AM, the logical date is the prior calendar date.
-2. Before expensive research, inspect the `Runs` tab, all v2 rows for that logical date, GitHub `main`, `data/frontier.json`, relevant GitHub Actions state, and stable production.
-3. A cycle is complete only when research/review is complete, intended Sheet rows exist exactly once, the GitHub snapshot is assembled and validated, temporary deltas are no longer required, Vercel production is `READY`, and the stable URL serves the current Projects database.
-4. If all gates pass, stop silently. Do not repeat research, append rows, commit, deploy, or modify timestamps merely because a recovery invocation fired.
-5. If the Sheet is complete but GitHub publication is incomplete, resume publication only from verified Sheet rows. Do not redo research.
-6. If GitHub is current but production is stale/unverified, recover production only. Do not touch the Sheet or create another data commit.
-7. Reconcile partial writes by stable ID, underlying project identity, source URL/date, and parent Project ID before adding anything.
-8. After a timeout, stale SHA, 404, or network error, re-read fresh state before another write. Never blindly repeat the same failed mutation.
-9. Before beginning a newer logical date, repair any incomplete cycle from the prior 48 hours first.
-10. Never disable, clone, pause, or reschedule this automation as a recovery action. Never create a replacement spreadsheet, repository, Vercel project, or automation.
+1. A cycle is complete only when research/review is complete, intended Sheet rows exist exactly once, the GitHub snapshot and compact status are assembled and validated, temporary publication inputs are gone, Vercel production is `READY`, and the stable URL serves the current Projects database.
+2. If the Sheet is complete but GitHub publication is incomplete, resume publication only from verified Sheet rows. Do not redo research.
+3. If GitHub is current but production is stale/unverified, recover production only. Do not touch the Sheet or create another data commit.
+4. Reconcile partial writes by stable ID, underlying project identity, source URL/date, and parent Project ID before adding anything.
+5. After a timeout, stale SHA, 404, or network error, re-read fresh state before another write. Never blindly repeat the same failed mutation.
+6. Before beginning a newer logical date, repair any incomplete cycle from the prior 48 hours first.
+7. Never disable, clone, pause, or reschedule this automation as a recovery action. Never create a replacement spreadsheet, repository, Vercel project, or automation.
 
-The 8:00 AM invocation is the final same-cycle recovery slot. Earlier transient failures remain silent while later recovery slots remain. If the 8 AM run still cannot complete after fresh safe retries, preserve the last valid state and leave a concise blocker; the next 9 PM anchor must repair that unfinished cycle before new research.
+The 8:00 AM invocation is the final same-cycle recovery slot. Earlier transient failures remain silent while later recovery slots remain. If the 8 AM run still cannot complete after fresh safe retries, preserve the last valid state and leave one concise blocker; the next 9 PM anchor must repair that unfinished cycle before new research. The independent GitHub parity heartbeat is a detector, not a substitute for the scheduled worker.
 
 ## Idempotency and stable identity
 
@@ -55,7 +66,7 @@ The 8:00 AM invocation is the final same-cycle recovery slot. Earlier transient 
 2. Review due Projects and open Claims first. Search for evidence that changes stage, scale, bottlenecks, measured economics, or claim resolution.
 3. Then search for genuinely new real-world AI projects. Favor primary sources and concrete operating evidence over general news volume.
 4. Add a new Project only for a named organization with a concrete deployment, operating initiative, or clearly scoped build and a specific workflow/use case.
-5. If new evidence refers to an existing initiative, append an Update and refresh the current Project state rather than creating a duplicate Project.
+5. If new evidence refers to an existing initiative, append an Update and refresh that Project's current state rather than creating a duplicate Project.
 6. Add a Bottleneck signal only when evidence shows a constraint is actually limiting, gating, delaying, changing economics, or shaping a project/domain.
 7. Add a Claim only when it is testable later: a measurable target, scale target, deadline, economic result, or explicit operating milestone.
 8. Prefer filings, earnings calls, investor materials, official company/customer disclosures, regulators, official statistics, and academic sources. Use high-quality journalism mainly for discovery/corroboration when a primary source can be found.
@@ -91,8 +102,8 @@ For due Claims, record later status using the defined resolution vocabulary. A p
 
 1. Update and verify the canonical Sheet first.
 2. Create one small `data/.frontier-delta-<logical_date>-<time>.json` containing only genuinely new v2 rows plus refreshed metadata. On recovery, reconstruct any needed delta from exact verified Sheet rows rather than re-researching.
-3. Let the GitHub `Assemble AI Project Tracker` workflow merge, validate, and clean the delta into `data/frontier.json`.
-4. Fetch GitHub `main` again and verify snapshot counts, stable IDs, linked Project IDs, schema version, source Sheet, and generated timestamp.
+3. Let the GitHub `Assemble AI Project Tracker` workflow merge, validate, clean the delta into `data/frontier.json`, and atomically regenerate `data/automation-status.json`.
+4. Fetch GitHub `main` again and verify snapshot counts, stable IDs, linked Project IDs, schema version, source Sheet, generated timestamp, compact status parity, and absence of temporary publication inputs.
 5. Verify the connected Vercel production deployment is `READY`, the stable URL returns HTTP 200, and it loads the current searchable Projects database.
 6. Only after Sheet + GitHub + production pass may the logical cycle be treated as complete. The final Run audit row should represent that completed end-to-end state.
 

@@ -10,7 +10,10 @@ on:
       - 'lib/**'
       - 'scripts/**'
       - 'data/frontier.json'
+      - 'data/automation-status.json'
       - 'tests/**'
+      - 'docs/automation/**'
+      - 'vercel.json'
       - '.github/workflows/**'
   push:
     branches:
@@ -23,7 +26,10 @@ on:
       - 'lib/**'
       - 'scripts/**'
       - 'data/frontier.json'
+      - 'data/automation-status.json'
       - 'tests/**'
+      - 'docs/automation/**'
+      - 'vercel.json'
       - '.github/workflows/**'
   workflow_dispatch:
 
@@ -33,6 +39,7 @@ permissions:
 jobs:
   verify:
     runs-on: ubuntu-latest
+    timeout-minutes: 5
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -42,3 +49,9 @@ jobs:
         run: npm test
       - name: Validate frontier snapshot
         run: npm run validate
+      - name: Regenerate deterministic automation status
+        run: npm run status:write
+      - name: Validate automation status against frontier and pending deltas
+        run: npm run status:validate
+      - name: Require committed status to match regenerated status
+        run: git diff --exit-code -- data/automation-status.json
