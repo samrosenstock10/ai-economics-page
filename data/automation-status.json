@@ -1,17 +1,17 @@
 {
   "schemaVersion": "1.0.0",
   "frontier": {
-    "logicalDate": "2026-09-01",
-    "generatedAt": "2026-09-01T22:17:41-04:00",
-    "latestRun": "2026-09-01 end-to-end verified",
+    "logicalDate": "2026-09-02",
+    "generatedAt": "2026-09-02T21:08:42-04:00",
+    "latestRun": "2026-09-02 substantive Sheet rows verified; publication pending",
     "counts": {
-      "projects": 11,
+      "projects": 13,
       "updates": 0,
-      "bottlenecks": 10,
+      "bottlenecks": 12,
       "claims": 8,
       "runs": 7
     }
   },
   "pendingDeltas": [],
-  "githubComplete": true
+  "githubComplete": false
 }
