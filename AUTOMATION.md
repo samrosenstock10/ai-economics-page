@@ -101,13 +101,51 @@ For due Claims, record later status using the defined resolution vocabulary. A p
 ## Publication and resume pipeline
 
 1. Update and verify the canonical Sheet first.
-2. Create one small `data/.frontier-delta-<logical_date>-<time>.json` containing only genuinely new v2 rows plus refreshed metadata. On recovery, reconstruct any needed delta from exact verified Sheet rows rather than re-researching.
+2. Create one small `data/.frontier-delta-<logical_date>-<time>.json` containing genuinely new v2 rows, explicit replacements for changed existing Projects or Claims, and refreshed metadata. Use the existing-row contract below. On recovery, reconstruct any needed delta from exact verified Sheet rows rather than re-researching.
 3. Let the GitHub `Assemble AI Project Tracker` workflow merge, validate, clean the delta into `data/frontier.json`, and atomically regenerate `data/automation-status.json`.
 4. Fetch GitHub `main` again and verify snapshot counts, stable IDs, linked Project IDs, schema version, source Sheet, generated timestamp, compact status parity, and absence of temporary publication inputs.
 5. Verify the connected Vercel production deployment is `READY`, the stable URL returns HTTP 200, and it loads the current searchable Projects database.
 6. Only after Sheet + GitHub + production pass may the logical cycle be treated as complete. The final Run audit row should represent that completed end-to-end state.
 
 Routine GitHub changes should deploy through the existing Git integration. If GitHub is current but production is demonstrably stale or broken, recover using only the existing Vercel project; never create another project.
+
+### Existing-row delta contract
+
+The normal `projects`, `updates`, `bottlenecks`, `claims`, and `runs` arrays remain append-only. An exact existing row is a harmless retry. A Project or Claim row that exactly matches a before/after state already archived for the same table and stable ID is also a consumed retry; it never replaces the current row. Any other different row with the same stable ID is rejected. Put changed existing Projects or Claims in the optional `replacements` array instead.
+
+Each replacement contains:
+
+- `changeId`: one stable, unique ID for this change, reused unchanged on retries (for example `CH-P-EXAMPLE-20260905-01`).
+- `table`: `projects` or `claims`.
+- `before`: the complete expected current row from fresh GitHub `data/frontier.json`.
+- `after`: the complete replacement row, verified against the canonical Sheet. Preserve original values and types; do not send a partial patch.
+- `updateId`: required for Projects, pointing to an Update for that same Project ID. Append the verified Update through `updates` in this delta, or reference an already published Update.
+
+For example, construct the publication input from the rows already read and verified:
+
+```js
+const delta = {
+  meta: verifiedMetadata,
+  updates: [verifiedUpdate],
+  replacements: [{
+    changeId: 'CH-P-EXAMPLE-20260905-01',
+    table: 'projects',
+    before: currentGitHubProject,
+    after: verifiedSheetProject,
+    updateId: verifiedUpdate['Update ID']
+  }]
+};
+```
+
+Project replacements preserve `Project ID`, `First Seen`, `Entity`, `Country`, `Use Case`, and `Legacy Evidence ID`; `Last Updated` must be a calendar date and cannot move backward. Identity corrections require fresh diagnosis outside routine collection.
+
+Claim replacements may change only `Next Review`, `Resolution Status`, `Resolution Date`, `Actual Result`, `Actual Unit`, `Realization %`, `Delay Days`, `Resolution Source`, and `Notes`. Every other field, including the original claim, target, deadline, claimant, and original source, remains unchanged. A non-Open resolution needs a calendar `Resolution Date`; `Validated`, `Partially validated`, `Contradicted`, and `Abandoned` also need separate `Resolution Source` evidence. `Unverified` and `Too early` may lack a source; explain the review in `Notes` without inventing evidence.
+
+The assembler archives each consumed replacement, including its complete before/after rows, in the optional snapshot `changeHistory`. Never supply or rewrite `changeHistory` in a delta. History does not alter the five dataset counts or require migration of existing snapshots.
+
+A replacement is applied only if the current row exactly matches `before` (object-key order does not matter). A recorded `changeId` with identical content is a no-op even after later changes; reusing it for different content is a conflict. Replaying a fully consumed older delta also preserves newer publication metadata. An unapplied delta with older metadata is rejected.
+
+After a stale-row, history, or metadata conflict, re-read GitHub and the Sheet and reconcile the intended change against current evidence. Never simply substitute a new `before` value to force an old `after` through. Do not change the original claim or create a duplicate Project to evade a conflict. The assembly script validates the whole batch before writing the snapshot, so a failed batch leaves the published snapshot intact.
 
 ## Public-site scope
 

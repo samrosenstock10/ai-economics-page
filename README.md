@@ -54,7 +54,7 @@ The app is static HTML/CSS/JavaScript; Vercel serves the repository directly.
 
 ## Publishing
 
-Routine scheduled collection writes the canonical Google Sheet first, then publishes only new rows as `data/.frontier-delta-*.json`. GitHub Actions merges deltas into `data/frontier.json`, validates the result, removes the temporary deltas, and commits the reviewed snapshot. Vercel deploys from `main`.
+Routine scheduled collection writes the canonical Google Sheet first, then publishes new rows and explicit existing-Project/Claim replacements as `data/.frontier-delta-*.json`. Replacements require the expected prior row and a stable change ID; the snapshot retains their before/after history. See `AUTOMATION.md` for the delta contract. GitHub Actions merges deltas into `data/frontier.json`, validates the result, removes the temporary deltas, and commits the reviewed snapshot. Vercel deploys from `main`.
 
 Production:
 
