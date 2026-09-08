@@ -26,7 +26,7 @@
           <p class="eyebrow">Database</p>
           <h2 id="database-title">Projects</h2>
         </div>
-        <p id="records-note">Loading…</p>
+        <p id="records-note" role="status" aria-live="polite">Loading…</p>
       </div>
 
       <div class="controls" aria-label="Project filters">
@@ -48,28 +48,29 @@
         </label>
       </div>
 
+      <div class="filter-actions"><button id="clear-filters" type="button" hidden>Clear filters</button></div>
+      <p class="table-note">Open a project’s details for its scale, category, and supporting context. Reported signals may include targets; read the metric label.</p>
       <div class="table-frame">
         <table>
           <thead>
             <tr>
               <th>Updated</th>
               <th>Project</th>
-              <th>Category</th>
               <th>Stage</th>
-              <th>Scale</th>
               <th>Bottleneck</th>
-              <th>Measured signal</th>
+              <th>Reported signal</th>
               <th>Source</th>
             </tr>
           </thead>
           <tbody id="projects-body"></tbody>
         </table>
       </div>
-      <div id="empty-state" class="empty-state" hidden>No projects match these filters.</div>
+      <div id="empty-state" class="empty-state" hidden><p>No projects match these filters.</p><button id="empty-clear" type="button">Clear filters</button></div>
+      <p class="table-note quality-note">Source quality is the research ledger’s 1–5 rating of its sources, not a measured project outcome. “Not reported” means the ledger has no reported metric.</p>
     </section>
 
     <footer>
-      <p>v2 tracks projects longitudinally. The original v1 evidence archive remains preserved in GitHub.</p>
+      <p>Projects are ordered by latest update.</p>
       <a class="sheet-link" href="#" target="_blank" rel="noreferrer">Methodology and full tables ↗</a>
     </footer>
   </main>
@@ -77,3 +78,4 @@
   <script src="./app.js" defer></script>
 </body>
 </html>
+
