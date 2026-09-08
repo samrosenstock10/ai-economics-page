@@ -2,18 +2,18 @@
   "meta": {
     "title": "AI Project Tracker",
     "sourceSpreadsheet": "https://docs.google.com/spreadsheets/d/1Q7_v1KKXj9a4Crt5kQxDOki1BxrO0b7xcfByqqWMmPM/edit",
-    "generatedAt": "2026-09-06T21:09:13-04:00",
+    "generatedAt": "2026-09-07T21:07:50-04:00",
     "timezone": "America/New_York",
     "schemaVersion": "2.0",
-    "latestRun": "2026-09-06 end-to-end verified",
+    "latestRun": "2026-09-07 publication pending final audit",
     "counts": {
-      "projects": 21,
+      "projects": 22,
       "updates": 0,
-      "bottlenecks": 20,
+      "bottlenecks": 21,
       "claims": 9,
       "runs": 12
     },
-    "logicalDate": "2026-09-06"
+    "logicalDate": "2026-09-07"
   },
   "projects": [
     {
@@ -582,6 +582,33 @@
       "Enabling Vendors": "OpenAI Daybreak",
       "Notes": "Pilot participant count and measured outcomes were not disclosed. The broader $1 billion Daybreak commitment and existing Daybreak user counts should not be treated as results or scale for this specific MS-ISAC pilot.",
       "Legacy Evidence ID": ""
+    },
+    {
+      "Project ID": "P-20260602-TARGET-COLLECTIONS-GURU",
+      "First Seen": "2026-09-07",
+      "Last Updated": "2026-09-07",
+      "Entity": "Target Group",
+      "Ticker": "",
+      "Country": "United Kingdom",
+      "Domain": "Enterprise & Back Office",
+      "Use Case": "Agentic AI for arrears and collections management",
+      "Project Summary": "Target Group deployed Collections Guru, an agentic AI collections assistant co-developed by Tech Mahindra and AWS, to gather and interpret case data, guide advisers and optimize collection strategies in arrears-management workflows.",
+      "Stage": "Measured",
+      "Scale": "Deployed in parts of Target Group's arrears-management operation; exact adviser, case and rollout counts were not disclosed.",
+      "Primary Bottleneck": "Integration",
+      "Secondary Bottlenecks": "Talent",
+      "Economic Mechanism": "Consolidate fragmented case information and automate collection-strategy preparation to reduce handling time, screen switching and reliance on specialist subject knowledge.",
+      "Measured Metric": "Company-reported efficiency gain in deployed areas",
+      "Measured Value": 40,
+      "Metric Unit": "%",
+      "Source Quality": 5,
+      "Primary Source": "https://www.techmahindra.com/insights/press-releases/techm-launches-aws-agentic-process-transformation-coe/",
+      "Discovery Source": "https://theintermediary.co.uk/2026/06/target-group-reports-40-boost-in-efficiency-with-new-ai-powered-collections-guru-agent/",
+      "Next Review": "2026-12-07",
+      "Status": "Active",
+      "Enabling Vendors": "Tech Mahindra; AWS",
+      "Notes": "Tech Mahindra says the deployed solution delivered about 40% efficiency gains, while Target's COO described these as encouraging early results and anticipated gains in rolled-out areas. Treat the figure as preliminary, self-reported evidence; exact rollout size, measurement period and methodology were not disclosed.",
+      "Legacy Evidence ID": ""
     }
   ],
   "updates": [],
@@ -885,6 +912,21 @@
       "Source URL": "https://openai.com/index/daybreak-for-frontline-defenders/",
       "Linked Project IDs": "P-20260903-OPENAI-MSISAC-DAYBREAK",
       "Notes": "Talent captures the program's stated staffing and expertise constraint. Budget limits are also discussed, but Capital is not separately recorded because the pilot bundles subsidized access and support."
+    },
+    {
+      "Signal ID": "B-20260602-TARGET-INTEGRATION-001",
+      "Date": "2026-06-02",
+      "Scope": "Project",
+      "Domain": "Enterprise & Back Office",
+      "Bottleneck": "Integration",
+      "Direction": "Easing",
+      "Evidence Summary": "Collections Guru gathers and interprets case data across systems and presents it in one adviser workflow; Target reported 40% less screen toggling and 30% lower handling time after deployment, showing fragmented system navigation was a concrete operating constraint the agent is reducing.",
+      "Speaker / Entity": "Target Group",
+      "Authority Type": "Customer statement via trade press",
+      "Source Quality": 4,
+      "Source URL": "https://theintermediary.co.uk/2026/06/target-group-reports-40-boost-in-efficiency-with-new-ai-powered-collections-guru-agent/",
+      "Linked Project IDs": "P-20260602-TARGET-COLLECTIONS-GURU",
+      "Notes": "Results are self-reported; exact rollout denominator and measurement period were not disclosed. The signal records workflow integration as an easing constraint, not proof that integration friction is eliminated across all collections operations."
     }
   ],
   "claims": [
