@@ -2,16 +2,16 @@
   "meta": {
     "title": "AI Project Tracker",
     "sourceSpreadsheet": "https://docs.google.com/spreadsheets/d/1Q7_v1KKXj9a4Crt5kQxDOki1BxrO0b7xcfByqqWMmPM/edit",
-    "generatedAt": "2026-09-07T21:07:50-04:00",
+    "generatedAt": "2026-09-07T21:10:25-04:00",
     "timezone": "America/New_York",
     "schemaVersion": "2.0",
-    "latestRun": "2026-09-07 publication pending final audit",
+    "latestRun": "2026-09-07 end-to-end verified",
     "counts": {
       "projects": 22,
       "updates": 0,
       "bottlenecks": 21,
       "claims": 9,
-      "runs": 12
+      "runs": 13
     },
     "logicalDate": "2026-09-07"
   },
@@ -1329,6 +1329,22 @@
       "Zero Result?": "No",
       "Coverage Notes": "Added U.S. Department of War GenAI.mil multi-model enterprise AI deployment and OpenAI/MS-ISAC Daybreak public-sector cyber-defense pilot; no due Projects or Claims required resolution. Substantive Sheet rows, GitHub assembly/frontier snapshot, Vercel READY deployment and stable production JSON verified before final audit row.",
       "GitHub Commit": "b2c4b3f8ad8f93cf08be81f6ab66ae295682576f",
+      "Collector": "GPT-5.6 Sol"
+    },
+    {
+      "Run ID": "R-20260907-DAILY",
+      "Run Timestamp ET": "2026-09-07 21:09 ET",
+      "Logical Date": "2026-09-07",
+      "Mode": "daily research",
+      "Sources Reviewed": "Due-project/open-claim review; Tech Mahindra/AWS/Target Group Collections Guru primary deployment disclosure; Target Group trade-press corroboration; fresh real-world AI deployment search",
+      "New Projects": 1,
+      "Project Updates": 0,
+      "Bottleneck Signals": 1,
+      "New Claims": 0,
+      "Resolved Claims": 0,
+      "Zero Result?": "No",
+      "Coverage Notes": "Added Target Group Collections Guru measured arrears-management deployment and integration bottleneck; no due Projects or Claims required resolution. Substantive Sheet rows, GitHub assembly/frontier snapshot, Vercel READY deployment and stable production JSON verified before final audit row.",
+      "GitHub Commit": "41db5b5be7ff9f125c1936403b0120008ed87b9a",
       "Collector": "GPT-5.6 Sol"
     }
   ]
