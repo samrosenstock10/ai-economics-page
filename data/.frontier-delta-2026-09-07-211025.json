@@ -1,0 +1,25 @@
+{
+  "meta": {
+    "generatedAt": "2026-09-07T21:10:25-04:00",
+    "logicalDate": "2026-09-07",
+    "latestRun": "2026-09-07 end-to-end verified"
+  },
+  "runs": [
+    {
+      "Run ID": "R-20260907-DAILY",
+      "Run Timestamp ET": "2026-09-07 21:09 ET",
+      "Logical Date": "2026-09-07",
+      "Mode": "daily research",
+      "Sources Reviewed": "Due-project/open-claim review; Tech Mahindra/AWS/Target Group Collections Guru primary deployment disclosure; Target Group trade-press corroboration; fresh real-world AI deployment search",
+      "New Projects": 1,
+      "Project Updates": 0,
+      "Bottleneck Signals": 1,
+      "New Claims": 0,
+      "Resolved Claims": 0,
+      "Zero Result?": "No",
+      "Coverage Notes": "Added Target Group Collections Guru measured arrears-management deployment and integration bottleneck; no due Projects or Claims required resolution. Substantive Sheet rows, GitHub assembly/frontier snapshot, Vercel READY deployment and stable production JSON verified before final audit row.",
+      "GitHub Commit": "41db5b5be7ff9f125c1936403b0120008ed87b9a",
+      "Collector": "GPT-5.6 Sol"
+    }
+  ]
+}
