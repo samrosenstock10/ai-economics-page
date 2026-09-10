@@ -2,16 +2,16 @@
   "meta": {
     "title": "AI Project Tracker",
     "sourceSpreadsheet": "https://docs.google.com/spreadsheets/d/1Q7_v1KKXj9a4Crt5kQxDOki1BxrO0b7xcfByqqWMmPM/edit",
-    "generatedAt": "2026-09-09T21:09:05-04:00",
+    "generatedAt": "2026-09-09T21:17:00-04:00",
     "timezone": "America/New_York",
     "schemaVersion": "2.0",
-    "latestRun": "2026-09-09 substantive research complete; publication verification pending",
+    "latestRun": "2026-09-09 end-to-end verified",
     "counts": {
       "projects": 33,
       "updates": 0,
       "bottlenecks": 31,
       "claims": 15,
-      "runs": 14
+      "runs": 15
     },
     "logicalDate": "2026-09-09"
   },
@@ -1946,6 +1946,22 @@
       "Zero Result?": "No",
       "Coverage Notes": "Added XPENG IRON manufacturing ramp, Leidos/U.S. Navy operational maritime-autonomy fleet integration, Meta Muse production personal agent, Firmus/OpenAI Malaysia AI-factory capacity build, Kodiak driverless long-haul safety-case project, and ASML BIC North lithography-capacity expansion. No due Projects or Claims required resolution. Substantive Sheet rows, GitHub assembly/frontier snapshot, Vercel READY deployment and stable production JSON verified before final audit row.",
       "GitHub Commit": "6ea63d0f8104d15f78d7f5f08ce2bf4539cf5d57",
+      "Collector": "GPT-5.6 Sol"
+    },
+    {
+      "Run ID": "R-20260909-DAILY",
+      "Run Timestamp ET": "2026-09-09 21:16 ET",
+      "Logical Date": "2026-09-09",
+      "Mode": "daily research",
+      "Sources Reviewed": "Due-project/open-claim review; Pony.ai/Mowasalat Doha Robotaxi primary disclosure; MBody AI/Mohegan Sun commercial robotics disclosure; Tempus/ARPA-H ADVOCATE primary disclosure; Truist AI Call Summaries primary deployment metrics; WAM/Aletihad Altair-Next Gen disclosures; fresh real-world AI deployment search",
+      "New Projects": 5,
+      "Project Updates": 0,
+      "Bottleneck Signals": 5,
+      "New Claims": 2,
+      "Resolved Claims": 0,
+      "Zero Result?": "No",
+      "Coverage Notes": "Added Pony.ai/Mowasalat Doha commercial Robotaxi, MBody AI/Mohegan Sun paid robotics deployment, Tempus/ARPA-H heart-failure autonomous-agent build, Truist measured call-summary deployment, and Altair-Next Gen in-orbit AI constellation build. No due Projects or Claims required resolution. Substantive Sheet rows, GitHub assembly/frontier snapshot, Vercel READY deployment and stable production JSON verified before final audit row.",
+      "GitHub Commit": "5ad99b63ad37a7f52ad83c7df2a408a6d4a8528c",
       "Collector": "GPT-5.6 Sol"
     }
   ]
