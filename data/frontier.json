@@ -2,16 +2,16 @@
   "meta": {
     "title": "AI Project Tracker",
     "sourceSpreadsheet": "https://docs.google.com/spreadsheets/d/1Q7_v1KKXj9a4Crt5kQxDOki1BxrO0b7xcfByqqWMmPM/edit",
-    "generatedAt": "2026-09-10T21:00:40-04:00",
+    "generatedAt": "2026-09-10T22:01:05-04:00",
     "timezone": "America/New_York",
     "schemaVersion": "2.0",
-    "latestRun": "2026-09-10 substantive research complete; publication verification pending",
+    "latestRun": "2026-09-10 end-to-end verified",
     "counts": {
       "projects": 37,
       "updates": 0,
       "bottlenecks": 35,
       "claims": 16,
-      "runs": 15
+      "runs": 16
     },
     "logicalDate": "2026-09-10"
   },
@@ -2153,6 +2153,22 @@
       "Zero Result?": "No",
       "Coverage Notes": "Added Pony.ai/Mowasalat Doha commercial Robotaxi, MBody AI/Mohegan Sun paid robotics deployment, Tempus/ARPA-H heart-failure autonomous-agent build, Truist measured call-summary deployment, and Altair-Next Gen in-orbit AI constellation build. No due Projects or Claims required resolution. Substantive Sheet rows, GitHub assembly/frontier snapshot, Vercel READY deployment and stable production JSON verified before final audit row.",
       "GitHub Commit": "5ad99b63ad37a7f52ad83c7df2a408a6d4a8528c",
+      "Collector": "GPT-5.6 Sol"
+    },
+    {
+      "Run ID": "R-20260910-DAILY",
+      "Run Timestamp ET": "2026-09-10 22:01 ET",
+      "Logical Date": "2026-09-10",
+      "Mode": "daily research",
+      "Sources Reviewed": "Due-project/open-claim review; Pony.ai/Verne Zagreb primary deployment disclosure; NVIDIA/Palantir supply-chain primary deployment disclosure; StarLink/IBM procurement primary deployment metrics; QumulusAI Blackwell B300 deployment disclosure; fresh real-world AI deployment search",
+      "New Projects": 4,
+      "Project Updates": 0,
+      "Bottleneck Signals": 4,
+      "New Claims": 1,
+      "Resolved Claims": 0,
+      "Zero Result?": "No",
+      "Coverage Notes": "Added Pony.ai/Verne Zagreb fully driverless passenger testing, NVIDIA/Palantir internal AI supply-chain deployment, StarLink/IBM measured procurement agents, and QumulusAI Philadelphia Blackwell B300 production capacity. No due Projects or Claims required resolution. Substantive Sheet rows, GitHub assembly/frontier snapshot, Vercel READY deployment and stable production JSON verified before final audit row.",
+      "GitHub Commit": "5c1a901e6a4d924f43c5555f0a81951bb6cec5a4",
       "Collector": "GPT-5.6 Sol"
     }
   ]
