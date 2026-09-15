@@ -2,16 +2,16 @@
   "meta": {
     "title": "AI Project Tracker",
     "sourceSpreadsheet": "https://docs.google.com/spreadsheets/d/1Q7_v1KKXj9a4Crt5kQxDOki1BxrO0b7xcfByqqWMmPM/edit",
-    "generatedAt": "2026-09-14T21:06:34-04:00",
+    "generatedAt": "2026-09-14T21:09:42-04:00",
     "timezone": "America/New_York",
     "schemaVersion": "2.0",
-    "latestRun": "2026-09-14 substantive research complete; publication verification pending",
+    "latestRun": "2026-09-14 end-to-end verified",
     "counts": {
       "projects": 52,
       "updates": 0,
       "bottlenecks": 47,
       "claims": 22,
-      "runs": 19
+      "runs": 20
     },
     "logicalDate": "2026-09-14"
   },
@@ -2940,6 +2940,22 @@
       "Zero Result?": "No",
       "Coverage Notes": "Added Hyundai Motor Group/42dot autonomous-driving Data Flywheel production engineering deployment, data-bottleneck signal and year-end Gwangju Level 4 validation milestone. No due Projects or Claims required resolution. Substantive Sheet rows, GitHub assembly/frontier snapshot, Vercel READY deployment and stable production JSON verified before final audit row.",
       "GitHub Commit": "c24d12bd7f0cd17df151801def02947ccee4776b",
+      "Collector": "GPT-5.6 Sol"
+    },
+    {
+      "Run ID": "R-20260914-DAILY",
+      "Run Timestamp ET": "2026-09-14 21:09 ET",
+      "Logical Date": "2026-09-14",
+      "Mode": "daily research",
+      "Sources Reviewed": "Due-project/open-claim review; Pony.ai/GAC Gen-4 Robotruck primary disclosure; Crusoe Tulsa manufacturing and Roboflow customer case-study primary disclosures; Bitdeer AI A202 company-issued release; fresh real-world AI deployment search",
+      "New Projects": 4,
+      "Project Updates": 0,
+      "Bottleneck Signals": 4,
+      "New Claims": 2,
+      "Resolved Claims": 0,
+      "Zero Result?": "No",
+      "Coverage Notes": "Added Pony.ai/GAC Gen-4 Robotruck volume-production ramp, Crusoe second Tulsa AI-infrastructure manufacturing factory, Bitdeer AI A202 Johor capacity build, and Roboflow/Crusoe measured production vision infrastructure. No due Projects or Claims required resolution. Substantive Sheet rows, GitHub assembly/frontier snapshot, Vercel READY deployment and stable production JSON verified before final audit row.",
+      "GitHub Commit": "0c32c4581d008a38a962b4c4da305b08f29df5f4",
       "Collector": "GPT-5.6 Sol"
     }
   ]
